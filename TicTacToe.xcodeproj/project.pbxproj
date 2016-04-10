@@ -12,6 +12,7 @@
 		8E1FA17D1C9A566600E45B7E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8E1FA17B1C9A566600E45B7E /* Main.storyboard */; };
 		8E1FA17F1C9A566600E45B7E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8E1FA17E1C9A566600E45B7E /* Assets.xcassets */; };
 		8E1FA1821C9A566600E45B7E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8E1FA1801C9A566600E45B7E /* LaunchScreen.storyboard */; };
+		8EC7044D1CBA98A900E03800 /* click.wav in Resources */ = {isa = PBXBuildFile; fileRef = 8EC7044C1CBA98A900E03800 /* click.wav */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +23,7 @@
 		8E1FA17E1C9A566600E45B7E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		8E1FA1811C9A566600E45B7E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		8E1FA1831C9A566600E45B7E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8EC7044C1CBA98A900E03800 /* click.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = click.wav; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +60,7 @@
 				8E1FA1791C9A566500E45B7E /* ViewController.swift */,
 				8E1FA17B1C9A566600E45B7E /* Main.storyboard */,
 				8E1FA17E1C9A566600E45B7E /* Assets.xcassets */,
+				8EC7044C1CBA98A900E03800 /* click.wav */,
 				8E1FA1801C9A566600E45B7E /* LaunchScreen.storyboard */,
 				8E1FA1831C9A566600E45B7E /* Info.plist */,
 			);
@@ -125,6 +128,7 @@
 				8E1FA1821C9A566600E45B7E /* LaunchScreen.storyboard in Resources */,
 				8E1FA17F1C9A566600E45B7E /* Assets.xcassets in Resources */,
 				8E1FA17D1C9A566600E45B7E /* Main.storyboard in Resources */,
+				8EC7044D1CBA98A900E03800 /* click.wav in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -284,6 +288,7 @@
 				8E1FA1881C9A566600E45B7E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
