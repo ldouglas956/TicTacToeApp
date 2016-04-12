@@ -8,6 +8,7 @@
 
 import UIKit
 import AVFoundation
+import QuartzCore
 
 class ViewController: UIViewController {
 	
@@ -24,12 +25,14 @@ class ViewController: UIViewController {
 	@IBOutlet weak var sevenBtn: UIButton!
 	@IBOutlet weak var eightBtn: UIButton!
 	@IBOutlet weak var nineBtn: UIButton!
+	@IBOutlet weak var winner: UITextField!
+	@IBOutlet weak var titleResetButton: UIButton!
 	
 	// MARK: Functions
-//
+	//
 	override func viewDidLoad() {
 		super.viewDidLoad()
-	
+		
 		let path = NSBundle.mainBundle().pathForResource("click", ofType: "wav")
 		let soundURL = NSURL(fileURLWithPath: path!)
 		do {
@@ -38,9 +41,9 @@ class ViewController: UIViewController {
 		} catch let err as NSError {
 			print(err.debugDescription)
 		}
-	
+		titleResetButton.userInteractionEnabled = false
 	}
-//
+	//
 	@IBAction func onButtonPressed(sender: UIButton) {
 		playSound()
 		
@@ -60,12 +63,15 @@ class ViewController: UIViewController {
 			}
 		}
 		didWin()
-		
-		if didWin() == true {
-			print("Winner")
+		if didWin() {
+			win()
 		}
 	}
-//
+	//
+	@IBAction func resetButton(sender: UIButton) {
+		resetGame()
+	}
+	//
 	func didWin() -> Bool {
 		if turn > 5 {
 			if (oneBtn.tag == 2 && twoBtn.tag == 2 && threeBtn.tag == 2) || (oneBtn.tag == 3 && twoBtn.tag == 3 && threeBtn.tag == 3)  {
@@ -84,11 +90,15 @@ class ViewController: UIViewController {
 				return true
 			} else if (threeBtn.tag == 2 && fiveBtn.tag == 2 && sevenBtn.tag == 2) || (threeBtn.tag == 3 && fiveBtn.tag == 3 && sevenBtn.tag == 3) {
 				return true
+			} else if (oneBtn.tag > 1 && twoBtn.tag > 1 && threeBtn.tag > 1 && fourBtn.tag > 1 && fiveBtn.tag > 1 && sixBtn.tag > 1 && sevenBtn.tag > 1 && eightBtn.tag > 1 && nineBtn.tag > 1) {
+				winner.text = "DRAW"
+				win()
+				return false
 			}
 		}
 		return false
 	}
-//
+	//
 	func resetGame() {
 		oneBtn.tag = 0; twoBtn.tag = 0; threeBtn.tag = 0; fourBtn.tag = 0; fiveBtn.tag = 0; sixBtn.tag = 0; sevenBtn.tag = 0; eightBtn.tag = 0; nineBtn.tag = 0;
 		oneBtn.setImage(UIImage(named: "Dot.png"), forState: UIControlState.Normal)
@@ -101,20 +111,46 @@ class ViewController: UIViewController {
 		eightBtn.setImage(UIImage(named: "Dot.png"), forState: UIControlState.Normal)
 		nineBtn.setImage(UIImage(named: "Dot.png"), forState: UIControlState.Normal)
 		turn = 10
+		winner.hidden = true
+		titleResetButton.setImage(UIImage(named: "Tic-Tac-Toe.png"), forState: UIControlState.Normal)
+		titleResetButton.userInteractionEnabled = false
 	}
-//
+	//
+	func win() {
+		if turn % 2 == 0 {
+			winner.text = "O WINS!"
+			winner.adjustsFontSizeToFitWidth = true
+		} else {
+			winner.text = "X WINS!"
+		}
+		winner.hidden = false
+		winner.sizeToFit()
+		titleResetButton.layer.zPosition = CGFloat.max
+		titleResetButton.setImage(UIImage(named: "Play-Again.png"), forState: UIControlState.Normal)
+		titleResetButton.userInteractionEnabled = true
+		oneBtn.userInteractionEnabled = false
+		twoBtn.userInteractionEnabled = false
+		threeBtn.userInteractionEnabled = false
+		fourBtn.userInteractionEnabled = false
+		fiveBtn.userInteractionEnabled = false
+		sixBtn.userInteractionEnabled = false
+		sevenBtn.userInteractionEnabled = false
+		eightBtn.userInteractionEnabled = false
+		nineBtn.userInteractionEnabled = false
+	}
+	//
 	func countTurns() {
 		turn += 1
 		print(turn)
 	}
-//
+	//
 	func playSound() {
 		if clickSound.playing {
 			clickSound.stop()
 		}
 		clickSound.play()
 	}
-//
+	//
 	
 	
 }

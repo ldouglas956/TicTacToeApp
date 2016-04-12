@@ -20,6 +20,10 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="K7f-My-mZO" userLabel="Background">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                                <color key="backgroundColor" white="0.75" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                            </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="CBk-XJ-Bd2" userLabel="Left Bar">
                                 <rect key="frame" x="183" y="0.0" width="32" height="592"/>
                                 <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -48,11 +52,18 @@
                                     <constraint firstAttribute="width" constant="10" id="7a4-zX-ucA"/>
                                 </constraints>
                             </imageView>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="583-1a-NFK">
-                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" axis="vertical" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="583-1a-NFK">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="700"/>
                                 <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3Vf-J7-Xd4">
+                                        <rect key="frame" x="0.0" y="0.0" width="600" height="100"/>
+                                        <state key="normal" title="Button" image="Tic-Tac-Toe"/>
+                                        <connections>
+                                            <action selector="resetButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="0bC-ih-aUF"/>
+                                        </connections>
+                                    </button>
                                     <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4LW-fI-cAW">
-                                        <rect key="frame" x="0.0" y="0.0" width="600" height="200"/>
+                                        <rect key="frame" x="0.0" y="100" width="600" height="200"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dn9-yB-JqO" userLabel="one">
                                                 <rect key="frame" x="0.0" y="0.0" width="200" height="200"/>
@@ -87,7 +98,7 @@
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pCV-aV-VAZ">
-                                        <rect key="frame" x="0.0" y="200" width="600" height="200"/>
+                                        <rect key="frame" x="0.0" y="300" width="600" height="200"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1af-gk-A5D" userLabel="four">
                                                 <rect key="frame" x="0.0" y="0.0" width="200" height="200"/>
@@ -122,7 +133,7 @@
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Bb4-7V-r9h">
-                                        <rect key="frame" x="0.0" y="400" width="600" height="200"/>
+                                        <rect key="frame" x="0.0" y="500" width="600" height="200"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aSO-5G-XjH" userLabel="seven">
                                                 <rect key="frame" x="0.0" y="0.0" width="200" height="200"/>
@@ -158,23 +169,57 @@
                                     </stackView>
                                 </subviews>
                             </stackView>
+                            <textField hidden="YES" opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" text="WINNER!" textAlignment="center" minimumFontSize="30" background="fireworks" translatesAutoresizingMaskIntoConstraints="NO" id="Jqc-Ii-hhz" userLabel="winner">
+                                <rect key="frame" x="300" y="200" width="0.0" height="200"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="200" id="o1Z-fm-dvC"/>
+                                </constraints>
+                                <color key="textColor" red="0.078431372549019607" green="0.61960784313725492" blue="0.66666666666666663" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="100"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="o1Z-fm-dvC"/>
+                                    </mask>
+                                </variation>
+                            </textField>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="K7f-My-mZO" secondAttribute="bottom" id="31I-ek-FDH"/>
                             <constraint firstItem="vjb-7m-tNV" firstAttribute="bottom" secondItem="dn9-yB-JqO" secondAttribute="bottom" constant="5" id="5iT-tc-ycI"/>
+                            <constraint firstAttribute="trailing" secondItem="Jqc-Ii-hhz" secondAttribute="trailing" id="6gk-Bt-rnc"/>
+                            <constraint firstItem="K7f-My-mZO" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="topMargin" id="6mO-UB-Bhj"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="K7f-My-mZO" secondAttribute="trailing" constant="-20" id="8Cl-Ux-yjK"/>
                             <constraint firstItem="a6k-62-GMi" firstAttribute="bottom" secondItem="1af-gk-A5D" secondAttribute="bottom" constant="5" id="QqE-Mi-CE5"/>
                             <constraint firstItem="a6k-62-GMi" firstAttribute="width" secondItem="dn9-yB-JqO" secondAttribute="width" multiplier="3" id="R9A-Qa-BDj"/>
+                            <constraint firstItem="Jqc-Ii-hhz" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="RC5-sO-A3T"/>
+                            <constraint firstItem="Jqc-Ii-hhz" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Wi7-8c-4wv"/>
                             <constraint firstItem="CBk-XJ-Bd2" firstAttribute="trailing" secondItem="dn9-yB-JqO" secondAttribute="trailing" constant="5" id="Wui-kG-OPL"/>
+                            <constraint firstItem="K7f-My-mZO" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-20" id="aXX-Mt-1GO"/>
                             <constraint firstItem="vjb-7m-tNV" firstAttribute="width" secondItem="dn9-yB-JqO" secondAttribute="width" multiplier="3" id="hrc-wp-P1b"/>
                             <constraint firstItem="ZgV-b0-g0r" firstAttribute="top" secondItem="fO5-s8-oyR" secondAttribute="top" id="k3G-bO-O3W"/>
                             <constraint firstItem="ZgV-b0-g0r" firstAttribute="trailing" secondItem="fO5-s8-oyR" secondAttribute="trailing" constant="5" id="lla-jE-Mwd"/>
                             <constraint firstItem="CBk-XJ-Bd2" firstAttribute="height" secondItem="dn9-yB-JqO" secondAttribute="height" multiplier="3" id="mvk-nD-Vi1"/>
                             <constraint firstItem="CBk-XJ-Bd2" firstAttribute="top" secondItem="dn9-yB-JqO" secondAttribute="top" id="nNi-Qd-cTx"/>
+                            <constraint firstItem="Jqc-Ii-hhz" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="oAn-Iq-Vzx"/>
                             <constraint firstItem="583-1a-NFK" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-20" id="pIz-T1-7U3"/>
+                            <constraint firstItem="Jqc-Ii-hhz" firstAttribute="leading" secondItem="CBk-XJ-Bd2" secondAttribute="trailing" id="qbm-pC-AwU"/>
+                            <constraint firstItem="Jqc-Ii-hhz" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" id="qzQ-dg-SgY"/>
+                            <constraint firstItem="Jqc-Ii-hhz" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" id="smH-9R-cyz"/>
                             <constraint firstItem="583-1a-NFK" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="wG8-JP-HSq"/>
                             <constraint firstItem="ZgV-b0-g0r" firstAttribute="height" secondItem="dn9-yB-JqO" secondAttribute="height" multiplier="3" id="y41-Lj-mpB"/>
+                            <constraint firstItem="ZgV-b0-g0r" firstAttribute="leading" secondItem="Jqc-Ii-hhz" secondAttribute="trailing" id="yl7-Re-CKC"/>
                             <constraint firstAttribute="trailingMargin" secondItem="583-1a-NFK" secondAttribute="trailing" constant="-20" id="zHb-M2-hiN"/>
                         </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="6gk-Bt-rnc"/>
+                                <exclude reference="oAn-Iq-Vzx"/>
+                                <exclude reference="qbm-pC-AwU"/>
+                                <exclude reference="yl7-Re-CKC"/>
+                            </mask>
+                        </variation>
                     </view>
                     <connections>
                         <outlet property="eightBtn" destination="GXW-mF-EKY" id="uhO-tV-awd"/>
@@ -185,7 +230,9 @@
                         <outlet property="sevenBtn" destination="aSO-5G-XjH" id="nbQ-ui-HNl"/>
                         <outlet property="sixBtn" destination="Ztk-eI-hov" id="5UY-1y-O8c"/>
                         <outlet property="threeBtn" destination="fSV-p7-Abi" id="tLv-nO-sFc"/>
+                        <outlet property="titleResetButton" destination="3Vf-J7-Xd4" id="RFs-gW-K0r"/>
                         <outlet property="twoBtn" destination="fO5-s8-oyR" id="NXv-X7-XFu"/>
+                        <outlet property="winner" destination="Jqc-Ii-hhz" id="lBM-6i-YkJ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -195,5 +242,7 @@
     </scenes>
     <resources>
         <image name="Dot" width="2000" height="2000"/>
+        <image name="Tic-Tac-Toe" width="663" height="99"/>
+        <image name="fireworks" width="1394" height="1324"/>
     </resources>
 </document>
