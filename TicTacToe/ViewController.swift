@@ -92,7 +92,20 @@ class ViewController: UIViewController {
 				return true
 			} else if (oneBtn.tag > 1 && twoBtn.tag > 1 && threeBtn.tag > 1 && fourBtn.tag > 1 && fiveBtn.tag > 1 && sixBtn.tag > 1 && sevenBtn.tag > 1 && eightBtn.tag > 1 && nineBtn.tag > 1) {
 				winner.text = "DRAW"
-				win()
+				winner.hidden = false
+				// Hide winner background image
+				titleResetButton.layer.zPosition = CGFloat.max
+				titleResetButton.setImage(UIImage(named: "Play-Again.png"), forState: UIControlState.Normal)
+				titleResetButton.userInteractionEnabled = true
+				oneBtn.userInteractionEnabled = false
+				twoBtn.userInteractionEnabled = false
+				threeBtn.userInteractionEnabled = false
+				fourBtn.userInteractionEnabled = false
+				fiveBtn.userInteractionEnabled = false
+				sixBtn.userInteractionEnabled = false
+				sevenBtn.userInteractionEnabled = false
+				eightBtn.userInteractionEnabled = false
+				nineBtn.userInteractionEnabled = false
 				return false
 			}
 		}
@@ -114,6 +127,15 @@ class ViewController: UIViewController {
 		winner.hidden = true
 		titleResetButton.setImage(UIImage(named: "Tic-Tac-Toe.png"), forState: UIControlState.Normal)
 		titleResetButton.userInteractionEnabled = false
+		oneBtn.userInteractionEnabled = true
+		twoBtn.userInteractionEnabled = true
+		threeBtn.userInteractionEnabled = true
+		fourBtn.userInteractionEnabled = true
+		fiveBtn.userInteractionEnabled = true
+		sixBtn.userInteractionEnabled = true
+		sevenBtn.userInteractionEnabled = true
+		eightBtn.userInteractionEnabled = true
+		nineBtn.userInteractionEnabled = true
 	}
 	//
 	func win() {
@@ -124,7 +146,6 @@ class ViewController: UIViewController {
 			winner.text = "X WINS!"
 		}
 		winner.hidden = false
-		winner.sizeToFit()
 		titleResetButton.layer.zPosition = CGFloat.max
 		titleResetButton.setImage(UIImage(named: "Play-Again.png"), forState: UIControlState.Normal)
 		titleResetButton.userInteractionEnabled = true

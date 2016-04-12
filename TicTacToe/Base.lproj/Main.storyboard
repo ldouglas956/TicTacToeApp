@@ -169,13 +169,13 @@
                                     </stackView>
                                 </subviews>
                             </stackView>
-                            <textField hidden="YES" opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" text="WINNER!" textAlignment="center" minimumFontSize="30" background="fireworks" translatesAutoresizingMaskIntoConstraints="NO" id="Jqc-Ii-hhz" userLabel="winner">
+                            <textField hidden="YES" opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" text="WINNER!" textAlignment="center" adjustsFontSizeToFit="NO" minimumFontSize="30" background="fireworks" translatesAutoresizingMaskIntoConstraints="NO" id="Jqc-Ii-hhz" userLabel="winner">
                                 <rect key="frame" x="300" y="200" width="0.0" height="200"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="200" id="o1Z-fm-dvC"/>
                                 </constraints>
-                                <color key="textColor" red="0.078431372549019607" green="0.61960784313725492" blue="0.66666666666666663" alpha="1" colorSpace="calibratedRGB"/>
-                                <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="100"/>
+                                <color key="textColor" red="0.10040497034788132" green="0.49635773897171021" blue="0.5259663462638855" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="70"/>
                                 <textInputTraits key="textInputTraits"/>
                                 <variation key="default">
                                     <mask key="constraints">
